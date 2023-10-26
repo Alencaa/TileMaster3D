@@ -1,0 +1,23 @@
+version: 2
+tpsheetFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Resources/Sprite/TilesSprite2.tpsheet
+- Assets/Resources/Sprite/UISheet.tpsheet
+- Assets/Resources/Sprite/UISheet2.tpsheet
+- Assets/SpriteAtlas/UISheet.tpsheet
+- Assets/SpriteAtlas/UISheet2.tpsheet
+textureFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Resources/Sprite/TilesSprite2.png
+- Assets/Resources/Sprite/UISheet.png
+- Assets/Resources/Sprite/UISheet2.png
+- Assets/SpriteAtlas/UISheet.png
+- Assets/SpriteAtlas/UISheet2.png
+normalmapFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
+- 
+enableDebugOutput: 0

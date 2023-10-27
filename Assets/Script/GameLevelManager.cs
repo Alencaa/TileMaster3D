@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-using System.Xml.Schema;
-//using UnityEngine.UIElements;
 
 public class GameLevelManager : MonoBehaviour
 {
@@ -34,11 +32,13 @@ public class GameLevelManager : MonoBehaviour
     [SerializeField] private Slider comboMeter = null;
     [SerializeField] private Button btnUndo = null;
     private Coroutine clockCoroutine;
+    private Camera mainCamera;
+    private Vector3 targetStar;
 
     private void Awake()
     {
         Instance = this;
-        Camera mainCamera = Camera.main;
+        mainCamera = Camera.main;
 
         Canvas canvas = GetComponentInChildren<Canvas>();
 
@@ -206,7 +206,8 @@ public class GameLevelManager : MonoBehaviour
                     listCheckMatch3[i].OnMatch3Complete();
                 }
                 raiseCombo();
-                StarController.instance.AddStar(tile1.transform.position, txtScore.transform.position, currentCombo, changeScore);
+                targetStar = new Vector3(-10f, -3f, 15);
+                StarController.instance.AddStar(tile1.transform.position, targetStar, currentCombo, changeScore);
             });
             
             StartCoroutine(SetListItemSlot_ResetPosition(0.3f));
@@ -216,6 +217,12 @@ public class GameLevelManager : MonoBehaviour
         {
             StartCoroutine(CheckGameOver());
         }
+    }
+
+    private void SetUIElementPosition(RectTransform uiElementRectTrans, Vector2 uiPos)
+    {
+        // Set the position of the UI element
+        uiElementRectTrans.anchoredPosition = uiPos;
     }
     public List<ItemTile> FindMatch3_ItemTile_Slots(ItemTile _itemTile)
     {

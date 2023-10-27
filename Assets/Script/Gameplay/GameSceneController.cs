@@ -18,6 +18,11 @@ public class GameSceneController : MonoBehaviour
     private void Start()
     {
         instance = this;
+        LoadLevelGame();
+        SetUpButton();
+    }
+    public void LoadLevelGame()
+    {
         Config.GetCurrLevel();
         level = Config.currLevel;
         if (level == 0) level = 1;
@@ -27,11 +32,6 @@ public class GameSceneController : MonoBehaviour
             Debug.Log(Config.currLevel);
             level = 1;
         }
-        LoadLevelGame();
-        SetUpButton();
-    }
-    public void LoadLevelGame()
-    {
         if (levelGame != null)
         {
             Destroy(levelGame);

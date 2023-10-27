@@ -42,7 +42,7 @@ public class GameLevelManager : MonoBehaviour
 
         Canvas canvas = GetComponentInChildren<Canvas>();
 
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.worldCamera = mainCamera;
     }
     private void StartClock()
